@@ -1,0 +1,26 @@
+<h1>Results Page!!!</h1>
+
+<ul>
+    <% data["Search"].forEach(function(movie) { %>
+      <li>
+          <strong>
+              <%= movie["Title"] %>
+          </strong> 
+		  - <%=movie["Year"]%>
+
+		  <% if(currentUser) { %>
+			<form action="/results/addMovie" method="POST">
+				<input type = "hidden" name = "movie[title]" value = "<%= movie["Title"] %>" />
+				<input type = "hidden" name = "movie[year]" value = "<%= movie["Year"] %>" />
+				<input type = "hidden" name = "movie[image]" value = "<%= movie["Poster"] %>" />
+				<input type = "hidden" name = "movie[type]" value = "<%= movie["Type"] %>" />
+				<button type="submit">Add movie</button>
+			</form>
+			
+		<% } %>
+      </li>
+    <% }) %>
+</ul>
+
+
+<a href="/">Search Again!</a>

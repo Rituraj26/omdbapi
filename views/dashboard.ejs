@@ -1,0 +1,14 @@
+<h1>Dashboard</h1>
+
+<ul>
+	<% movieDetails.forEach(function(movie) { %>
+      <li>
+          <strong>
+              <%= movie.title %>
+          </strong> 
+          - <%= movie.year %>
+      </li>
+	<% }); %>
+</ul>
+
+<a href="/">Search Again!</a>
